@@ -1,16 +1,19 @@
 <!DOCTYPE html>
+<html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial scale-scale=1">
     <title>A F*CKING DIDACTIC PERFORMANCE AS RESISTANCE</title>
+</head>
+
+<body>
     <style>
-        html, body {
-            height: 100%;
+        body {
             margin: 0;
             overflow: hidden;
         }
+
 
         #background-video {
             width: 100%;
@@ -18,9 +21,10 @@
             object-fit: cover;
         }
 
+
         .pixel {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             position: absolute;
             background-color: black;
             pointer-events: none;
@@ -66,7 +70,7 @@
                 const positionY = isMobile ? event.touches[0].clientY : event.clientY;
 
                 // Clear pixels in a 20px radius around the cursor
-                const radius = isMobile ? 20 : 10;
+                const radius = isMobile ? 25 : 25;
                 const pixels = document.querySelectorAll('.pixel');
 
                 pixels.forEach(pixel => {
