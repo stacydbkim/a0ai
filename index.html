@@ -18,36 +18,54 @@
 
 
     <title>Background Video</title>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A F*CKING DIDACTIC PERFORMANCE AS RESISTANCE</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
         }
 
+        #video-container {
+            width: 30%; /* Adjust the width as needed */
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
         #background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1;
         }
 
 
-
-        .square {
-            width: 20px;
-            height: 20px;
+        .pixel {
+            width: 9px;
+            height: 9px;
             position: absolute;
-            background-color: transparent;
+            background-color: black;
+            pointer-events: none;
             transition: background-color 0.2s ease-out;
-            pointer-events: none; /* Ensure squares do not interfere with mouse events on underlying elements */
         }
 
+        /* Add styles for mobile */
+        @media only screen and (max-width: 600px) {
+            .pixel {
+                width: 18px;
+                height: 18px;
+            }
+        }
     </style>
 </head>
+
 <body>
+    <!-- Your video element -->
     <video id="background-video" autoplay muted loop controls>
         <source src="./sources/complex_blueandpurple.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -56,42 +74,41 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const body = document.body;
+            const isMobile = window.innerWidth <= 600;
 
-            // Create a grid of squares
-            for (let i = 0; i < window.innerWidth / 20; i++) {
-                for (let j = 0; j < window.innerHeight / 20; j++) {
-                    const square = document.createElement('div');
-                    square.className = 'square';
-                    square.style.left = `${i * 20}px`;
-                    square.style.top = `${j * 20}px`;
-                    body.appendChild(square);
+            // Create a grid of pixels
+            for (let i = 0; i < window.innerWidth / 9; i++) {
+                for (let j = 0; j < window.innerHeight / 9; j++) {
+                    const pixel = document.createElement('div');
+                    pixel.className = 'pixel';
+                    pixel.style.left = `${i * 9}px`;
+                    pixel.style.top = `${j * 9}px`;
+                    body.appendChild(pixel);
                 }
             }
 
-            // Add event listener to clear squares on hover
-            body.addEventListener('mousemove', function (event) {
-                const mouseX = event.clientX;
-                const mouseY = event.clientY;
+            // Add event listener to clear pixels on hover or touch
+            body.addEventListener(isMobile ? 'touchmove' : 'mousemove', function (event) {
+                const positionX = isMobile ? event.touches[0].clientX : event.clientX;
+                const positionY = isMobile ? event.touches[0].clientY : event.clientY;
 
-                // Clear squares in a 40px radius around the mouse cursor
-                const radius = 20;
-                const squares = document.querySelectorAll('.square');
+                // Clear pixels in a 20px radius around the cursor
+                const radius = isMobile ? 20 : 10;
+                const pixels = document.querySelectorAll('.pixel');
 
-                squares.forEach(square => {
-                    const squareX = square.offsetLeft + 10; // Adjust for square center
-                    const squareY = square.offsetTop + 10; // Adjust for square center
+                pixels.forEach(pixel => {
+                    const pixelX = pixel.offsetLeft + 4.5;
+                    const pixelY = pixel.offsetTop + 4.5;
 
-                    const distance = Math.sqrt((mouseX - squareX) ** 2 + (mouseY - squareY) ** 2);
+                    const distance = Math.sqrt((positionX - pixelX) ** 2 + (positionY - pixelY) ** 2);
 
                     if (distance < radius) {
-                        square.style.backgroundColor = 'white';
+                        pixel.style.backgroundColor = 'transparent';
                     }
                 });
             });
         });
     </script>
-
-
 </body>
 
 </html>
