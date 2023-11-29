@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>A F*CKING DIDACTIC PERFORMANCE AS RESISTANCE</title>
+    <title>A0AI</title>
    <style>
     body {
         margin: 0;
@@ -17,22 +17,22 @@
         object-fit: cover;
     }
 
-    .pixel {
-        width: 1vw;
-        height: 1vw;
-        position: absolute;
-        background-color: black;
-        pointer-events: none;
-        transition: background-color 0.2s ease-out;
-    }
-
-    /* Add styles for mobile */
-    @media only screen and (max-width: 600px) {
-        .pixel {
-            width:5vw;
-            height: 5vw;
+         .pixel {
+            width: 9px;
+            height: 9px;
+            position: absolute;
+            background-color: black;
+            pointer-events: none;
+            transition: background-color 0.2s ease-out;
         }
-    }
+
+        /* Add styles for mobile */
+        @media only screen and (max-width: 600px) {
+            .pixel {
+                width: 18px;
+                height: 18px;
+            }
+        }
 </style>
 
 </head>
@@ -50,12 +50,12 @@
             const isMobile = window.innerWidth <= 600;
 
             // Create a grid of pixels
-            for (let i = 0; i < window.innerWidth / 5; i++) {
-                for (let j = 0; j < window.innerHeight / 5; j++) {
+            for (let i = 0; i < window.innerWidth / 9; i++) {
+                for (let j = 0; j < window.innerHeight / 9; j++) {
                     const pixel = document.createElement('div');
                     pixel.className = 'pixel';
-                    pixel.style.left = `${i * 5}px`;
-                    pixel.style.top = `${j * 5}px`;
+                    pixel.style.left = `${i * 9}px`;
+                    pixel.style.top = `${j * 9}px`;
                     body.appendChild(pixel);
                 }
             }
@@ -66,7 +66,7 @@
                 const positionY = isMobile ? event.touches[0].clientY : event.clientY;
 
                 // Clear pixels in a 20px radius around the cursor
-                const radius = isMobile ? 25 : 25;
+                const radius = isMobile ? 25 : 10;
                 const pixels = document.querySelectorAll('.pixel');
 
                 pixels.forEach(pixel => {
