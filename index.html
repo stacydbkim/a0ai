@@ -44,13 +44,12 @@
         Your browser does not support the video tag.
     </video>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const body = document.body;
-        const isMobile = window.innerWidth <= 600;
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.body;
+            const isMobile = window.innerWidth <= 600;
 
-        // Create a grid of pixels
-        function createPixelGrid() {
+            // Create a grid of pixels
             for (let i = 0; i < window.innerWidth / 9; i++) {
                 for (let j = 0; j < window.innerHeight / 9; j++) {
                     const pixel = document.createElement('div');
@@ -60,37 +59,29 @@
                     body.appendChild(pixel);
                 }
             }
-        }
 
-        // Recalculate pixel grid on video load
-        const backgroundVideo = document.getElementById('background-video');
-        backgroundVideo.addEventListener('loadedmetadata', function () {
-            createPixelGrid();
-        });
+            // Add event listener to clear pixels on hover or touch
+            body.addEventListener(isMobile ? 'touchmove' : 'mousemove', function (event) {
+                const positionX = isMobile ? event.touches[0].clientX : event.clientX;
+                const positionY = isMobile ? event.touches[0].clientY : event.clientY;
 
-        // Add event listener to clear pixels on hover or touch
-        body.addEventListener(isMobile ? 'touchmove' : 'mousemove', function (event) {
-            const positionX = isMobile ? event.touches[0].clientX : event.clientX;
-            const positionY = isMobile ? event.touches[0].clientY : event.clientY;
+                // Clear pixels in a 20px radius around the cursor
+                const radius = isMobile ? 10 : 10;
+                const pixels = document.querySelectorAll('.pixel');
 
-            // Clear pixels in a 20px radius around the cursor
-            const radius = isMobile ? 10 : 10;
-            const pixels = document.querySelectorAll('.pixel');
+                pixels.forEach(pixel => {
+                    const pixelX = pixel.offsetLeft + 4.5;
+                    const pixelY = pixel.offsetTop + 4.5;
 
-            pixels.forEach(pixel => {
-                const pixelX = pixel.offsetLeft + 4.5;
-                const pixelY = pixel.offsetTop + 4.5;
+                    const distance = Math.sqrt((positionX - pixelX) ** 2 + (positionY - pixelY) ** 2);
 
-                const distance = Math.sqrt((positionX - pixelX) ** 2 + (positionY - pixelY) ** 2);
-
-                if (distance < radius) {
-                    pixel.style.backgroundColor = 'transparent';
-                }
+                    if (distance < radius) {
+                        pixel.style.backgroundColor = 'transparent';
+                    }
+                });
             });
         });
-    });
-</script>
-
+    </script>
 </body>
 
 </html>
