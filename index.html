@@ -29,8 +29,8 @@
     /* Add styles for mobile */
     @media only screen and (max-width: 600px) {
         .pixel {
-            width: 1vw;
-            height: 1vw;
+            width:5vw;
+            height: 5vw;
         }
     }
 </style>
@@ -50,12 +50,12 @@
             const isMobile = window.innerWidth <= 600;
 
             // Create a grid of pixels
-            for (let i = 0; i < window.innerWidth / 9; i++) {
-                for (let j = 0; j < window.innerHeight / 9; j++) {
+            for (let i = 0; i < window.innerWidth / 5; i++) {
+                for (let j = 0; j < window.innerHeight / 5; j++) {
                     const pixel = document.createElement('div');
                     pixel.className = 'pixel';
-                    pixel.style.left = `${i * 9}px`;
-                    pixel.style.top = `${j * 9}px`;
+                    pixel.style.left = `${i * 5}px`;
+                    pixel.style.top = `${j * 5}px`;
                     body.appendChild(pixel);
                 }
             }
