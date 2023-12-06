@@ -29,6 +29,20 @@
             z-index: 0;
         }
 
+        /* Text container for desktop */
+        .text-container-desktop {
+            position: absolute;
+            z-index: 1;
+            font-family: Courier, monospace;
+            font-size: 10px;
+            color: white;
+            width: 30%;
+            top: 20%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+        }
+
         .text-container {
             position: absolute;
             z-index: 1;
@@ -39,7 +53,7 @@
             top: 75%; /* Adjust top as needed */
             left: 50%;
             transform: translateX(-50%);
-            text-align: center;
+            text-align: left;
         }
 
         /* Add styles for mobile */
@@ -52,6 +66,10 @@
             #background-video {
                 width: 100vw;
                 height: 70vh; /* Adjust height as needed */
+            }
+
+            .text-container-desktop {
+                display: none; /* Hide desktop text container in mobile view */
             }
 
             .text-container {
@@ -71,7 +89,14 @@
         Your browser does not support the video tag.
     </video>
 
-    <!-- Text container -->
+    <!-- Text container for desktop -->
+    <div class="text-container-desktop">
+        <p>This is the first paragraph of your text. Keep it concise and to the point.</p>
+        <p>This is the second paragraph. Make sure to maintain a clean and straightforward style.</p>
+        <p>And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.</p>
+    </div>
+
+    <!-- Text container for mobile -->
     <div class="text-container">
         <p>This is the first paragraph of your text. Keep it concise and to the point.</p>
         <p>This is the second paragraph. Make sure to maintain a clean and straightforward style.</p>
