@@ -38,7 +38,7 @@
             top: 20%;
             left: 20%;
             transform: translate(-50%, -50%);
-            text-align: center;
+            text-align: left;
         }
 
         /* Add styles for mobile */
@@ -78,6 +78,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             const body = document.body;
             const isMobile = window.innerWidth <= 600;
+            let isTouching = false;
+
+            // Prevent default touch behavior
+            body.addEventListener('touchmove', function (event) {
+                event.preventDefault();
+            });
 
             // Create a grid of pixels
             for (let i = 0; i < window.innerWidth / 9; i++) {
@@ -91,7 +97,22 @@
             }
 
             // Add event listener to clear pixels on hover or touch
+            body.addEventListener(isMobile ? 'touchstart' : 'mousemove', function (event) {
+                isTouching = true;
+                clearPixels(event);
+            });
+
             body.addEventListener(isMobile ? 'touchmove' : 'mousemove', function (event) {
+                if (isTouching) {
+                    clearPixels(event);
+                }
+            });
+
+            body.addEventListener(isMobile ? 'touchend' : 'mouseup', function () {
+                isTouching = false;
+            });
+
+            function clearPixels(event) {
                 const positionX = isMobile ? event.touches[0].clientX : event.clientX;
                 const positionY = isMobile ? event.touches[0].clientY : event.clientY;
 
@@ -109,7 +130,7 @@
                         pixel.style.backgroundColor = 'transparent';
                     }
                 });
-            });
+            }
         });
     </script>
 </body>
