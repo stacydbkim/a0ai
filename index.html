@@ -30,7 +30,21 @@
         }
 
         /* Text container for desktop */
-        .text-container {
+        .text-container-desktop {
+            display: none; /* Hide desktop text container by default */
+            position: absolute;
+            z-index: 1;
+            font-family: Courier, monospace;
+            font-size: 10px;
+            color: white;
+            width: 30%;
+            top: 25%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+        }
+
+           .text-container {
             display: none; /* Hide text container by default */
             position: absolute;
             z-index: 1;
@@ -44,8 +58,13 @@
             text-align: left;
         }
 
-        /* First paragraph opacity for desktop */
+        /* First paragraph opacity for mobile */
         .text-container p:first-child {
+            opacity: 0.7;
+        }
+
+        /* First paragraph opacity for desktop */
+        .text-container-desktop p:first-child {
             opacity: 0.7;
         }
 
@@ -61,12 +80,23 @@
                 height: 70vh; /* Adjust height as needed */
             }
 
-            /* Remove display: none from .text-container */
+            .text-container-desktop {
+                display: none; /* Hide desktop text container in mobile view */
+            }
+
+           /* Remove display: none from .text-container */
             .text-container {
                 display: block;
                 font-size: 16px;
                 width: 80%;
                 top: 80%; /* Adjust top as needed */
+            }
+        }
+
+        /* Display desktop text container only in desktop view */
+        @media only screen and (min-width: 601px) {
+            .text-container-desktop {
+                display: block;
             }
         }
     </style>
@@ -81,6 +111,13 @@
     </video>
 
     <!-- Text container for desktop -->
+    <div class="text-container-desktop">
+        <p style="opacity: 0.7;">Hover the cursor around the screen to reveal and play the video.</p>
+        <p>This is the second paragraph. Make sure to maintain a clean and straightforward style.</p>
+        <p>And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.</p>
+    </div>
+
+    <!-- Text container for mobile -->
     <div class="text-container">
         <p style="opacity: 0.7;">This is the first paragraph of your text. Keep it concise and to the point.</p>
         <p>This is the second paragraph. Make sure to maintain a clean and straightforward style.</p>
