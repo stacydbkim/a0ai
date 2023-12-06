@@ -9,6 +9,7 @@
         body {
             margin: 0;
             overflow: hidden;
+            background-color: black; /* Set background color to black */
         }
 
         #background-video {
@@ -35,6 +36,19 @@
             font-size: 10px;
             color: white;
             width: 30%;
+            top: 30%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+        }
+
+         .text-container-2 {
+            position: absolute;
+            z-index: 1;
+            font-family: Courier, monospace;
+            font-size: 14px;
+            color: white;
+            width: 30%;
             top: 20%;
             left: 20%;
             transform: translate(-50%, -50%);
@@ -48,12 +62,18 @@
                 height: 18px;
             }
 
+            #background-video {
+                width: 100vw;
+                height: 70vh; /* Adjust height as needed */
+            }
+
             .text-container {
                 font-size: 16px;
                 width: 80%;
-                top: 50%;
+                top: auto;
+                bottom: 10%;
                 left: 50%;
-                transform: translate(-50%, -50%);
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -72,6 +92,10 @@
         <p>This is the first paragraph of your text. Keep it concise and to the point.</p>
         <p>This is the second paragraph. Make sure to maintain a clean and straightforward style.</p>
         <p>And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.</p>
+    </div>
+
+  <div class="text-container-2">
+        <p>A0AI</p>
     </div>
 
     <script>
