@@ -5,25 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>A0AI</title>
-   <style>
-    body {
-        margin: 0;
-        overflow: hidden;
-    }
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
 
-    #background-video {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-    }
+        #background-video {
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            object-fit: cover;
+        }
 
-         .pixel {
+        .pixel {
             width: 9px;
             height: 9px;
             position: absolute;
             background-color: black;
             pointer-events: none;
             transition: background-color 0.2s ease-out;
+            z-index: 0;
+        }
+
+        .text-container {
+            position: absolute;
+            z-index: 1;
+            font-family: Courier, monospace;
+            font-size: 10px;
+            color: white;
+            width: 30%;
+            top: 20%;
+            left: 20%;
+            transform: translate(-50%, -50%);
         }
 
         /* Add styles for mobile */
@@ -32,8 +46,13 @@
                 width: 18px;
                 height: 18px;
             }
+
+            .text-container {
+                font-size: 20px;
+                width: 80%;
+            }
         }
-</style>
+    </style>
 
 </head>
 
@@ -43,6 +62,13 @@
         <source src="./sources/vjingfinal_compressed.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
+    <!-- Text container -->
+    <div class="text-container">
+        <p>This is the first paragraph of your text. Keep it concise and to the point.</p>
+        <p>This is the second paragraph. Make sure to maintain a clean and straightforward style.</p>
+        <p>And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.</p>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
