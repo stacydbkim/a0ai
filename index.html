@@ -40,7 +40,7 @@
             top: 20%;
             left: 20%;
             transform: translate(-50%, -50%);
-            text-align: left;
+            text-align: center;
         }
 
         .text-container {
@@ -53,9 +53,17 @@
             top: 75%; /* Adjust top as needed */
             left: 50%;
             transform: translateX(-50%);
-            text-align: left;
-            display:none; /* Hide mobile text container in desktop view */
-            }
+            text-align: center;
+        }
+
+        /* First paragraph opacity for mobile */
+        .text-container p:first-child {
+            opacity: 0.5;
+        }
+
+        /* First paragraph opacity for desktop */
+        .text-container-desktop p:first-child {
+            opacity: 0.5;
         }
 
         /* Add styles for mobile */
@@ -93,14 +101,14 @@
 
     <!-- Text container for desktop -->
     <div class="text-container-desktop">
-        <p>This is the first paragraph of your text. Keep it concise and to the point.</p>
+        <p style="opacity: 0.5;">This is the first paragraph of your text. Keep it concise and to the point.</p>
         <p>This is the second paragraph. Make sure to maintain a clean and straightforward style.</p>
         <p>And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.</p>
     </div>
 
     <!-- Text container for mobile -->
     <div class="text-container">
-        <p>This is the first paragraph of your text. Keep it concise and to the point.</p>
+        <p style="opacity: 0.5;">This is the first paragraph of your text. Keep it concise and to the point.</p>
         <p>This is the second paragraph. Make sure to maintain a clean and straightforward style.</p>
         <p>And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.And this is the third paragraph. Adjust the content as needed for your message.</p>
     </div>
