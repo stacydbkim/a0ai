@@ -31,13 +31,14 @@
 
         /* Text container for desktop */
         .text-container-desktop {
+            display: none; /* Hide desktop text container by default */
             position: absolute;
             z-index: 1;
             font-family: Courier, monospace;
             font-size: 10px;
             color: white;
             width: 30%;
-            top: 20%;
+            top: 25%;
             left: 20%;
             transform: translate(-50%, -50%);
             text-align: left;
@@ -54,6 +55,7 @@
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
+            display: none;
         }
 
         /* First paragraph opacity for mobile */
@@ -87,6 +89,13 @@
                 font-size: 16px;
                 width: 80%;
                 top: 80%; /* Adjust top as needed */
+            }
+        }
+
+        /* Display desktop text container only in desktop view */
+        @media only screen and (min-width: 601px) {
+            .text-container-desktop {
+                display: block;
             }
         }
     </style>
