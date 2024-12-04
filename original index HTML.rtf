@@ -1,0 +1,203 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+\
+<head>\
+    <meta charset="utf-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1">\
+    <title>A0AI</title>\
+    <style>\
+        body \{\
+            margin: 0;\
+            overflow: hidden;\
+            background-color: black; /* Set background color to black */\
+        \}\
+\
+        #background-video \{\
+            width: 100vw;\
+            height: 100vh;\
+            z-index: -1;\
+            object-fit: cover;\
+        \}\
+\
+        .pixel \{\
+            width: 9px;\
+            height: 9px;\
+            position: absolute;\
+            background-color: black;\
+            pointer-events: none;\
+            transition: background-color 0.2s ease-out;\
+            z-index: 0;\
+        \}\
+\
+        /* Text container for desktop */\
+        .text-container-desktop \{\
+            display: none; /* Hide desktop text container by default */\
+            position: absolute;\
+            z-index: 1;\
+            font-family: Courier, monospace;\
+            font-size: 12px;\
+            color: white;\
+            width: 30%;\
+            top: 50%;\
+            left: 20%;\
+            transform: translate(-50%, -50%);\
+            text-align: left;\
+        \}\
+\
+           .text-container \{\
+            display: none; /* Hide text container by default */\
+            position: absolute;\
+            z-index: 1;\
+            font-family: Courier, monospace;\
+            font-size: 10px;\
+            color: white;\
+            width: 80%;\
+            top: 150vh; /* Adjust top as needed to position below the video */\
+            left: 50%;\
+            transform: translate(-50%, -50%);\
+            text-align: center;\
+        \}\
+\
+        /* First paragraph opacity for mobile */\
+        .text-container p:first-child \{\
+            opacity: 0.7;\
+        \}\
+\
+        /* First paragraph opacity for desktop */\
+        .text-container-desktop p:first-child \{\
+            opacity: 0.7;\
+        \}\
+\
+        /* Add styles for mobile */\
+        @media only screen and (max-width: 600px) \{\
+            .pixel \{\
+                width: 18px;\
+                height: 18px;\
+            \}\
+\
+            #background-video \{\
+                width: 100vw;\
+                height: 70vh; /* Adjust height as needed */\
+            \}\
+\
+            .text-container-desktop \{\
+                display: none; /* Hide desktop text container in mobile view */\
+            \}\
+\
+           /* Remove display: none from .text-container */\
+            .text-container \{\
+                display: block;\
+                font-size: 16px;\
+                width: 80%;\
+                top: 150vh; /* Adjust top as needed */\
+            \}\
+        \}\
+\
+        /* Display desktop text container only in desktop view */\
+        @media only screen and (min-width: 601px) \{\
+            .text-container-desktop \{\
+                display: block;\
+            \}\
+        \}\
+    </style>\
+\
+</head>\
+\
+<body>\
+    <!-- Your video element -->\
+    <video id="background-video" autoplay loop controls>\
+        <source src="./sources/vjingfinal_compressed.mp4" type="video/mp4">\
+        Your browser does not support the video tag.\
+    </video>\
+\
+    <!-- Text container for desktop -->\
+    <div class="text-container-desktop">\
+        <p style="font-size: 18;">A0AI</p>\
+        <p style="opacity: 0.7;">(Hover the cursor around the screen to reveal and play the video.)</p>\
+      <p>In addressing the persisting challenges surrounding surveillance capitalism, we find ourselves confronted with an array of emerging threats in the era of generative AI. How can visual communication design effectively intervene and navigate these complexities in a meaningful way?</p>\
+        <p><i>Project A0AI</i> is a multi-modal project consisting of prints, videos, and a performance \'97 exploring the intricate relationship between technology and individuals through an open-ended, experimental, and process-driven design practice. Created through a text-to-image AI tool, the portrait images visually communicate the dehumanizing impact of perceiving individuals as mere data points, susceptible to exploitation and behavior manipulation by tech corporations. These distorted faces, presented as bitmaps, were transformed into animated video clips for analog video feedback experiments \'97 a poignant metaphor for the closed-circuit systems inherent in generative AI technology. This video experiment led to a pivotal decision in the design process to embrace the unpredictability and uncertainty both as an attitude and an aesthetic. Furthermore, the intentional adaptation of analog equipment serves as a symbolic act of resistance amidst the rapid advancements of technology. Finally, the live VJ-ing performance is representative of the performative design principles. This dynamic approach allows for active engagement with visual materials, fostering spontaneity in the design process. Beyond its aesthetic value, live VJ-ing creates a visceral and immersive experience, inviting the audience to participate and connect through captivating visuals and music.</p>\
+       <p>Today, where novel technologies pose threats to fundamental human rights; individual and collective identity; and the essence of human authenticity; visual communication design emerges as a powerful intervention tool. To meaningfully contribute to the discourse on social change, <i>Project A0AI</i> serves to advocate for courageous exploration, radical experimentation, and a commitment to authenticity through the spirit of resistance.</p><br>\
+       <p>@stacydbkim / stacydbkim@gmail.com</p>\
+    </div>\
+\
+    <!-- Text container for mobile -->\
+    <div class="text-container">\
+        <p style="font-size: 14;">A0AI</p>\
+        <p style="opacity: 0.7;">(Swipe screen with one finger to reveal and play the video. Scroll with two fingers to read the text below.)</p>\
+           <p>In addressing the persisting challenges surrounding surveillance capitalism, we find ourselves confronted with an array of emerging threats in the era of generative AI. How can visual communication design effectively intervene and navigate these complexities in a meaningful way?</p>\
+        <p><i>Project A0AI</i> is a multi-modal project consisting of prints, videos, and a performance \'97 exploring the intricate relationship between technology and individuals through an open-ended, experimental, and process-driven design practice. Created through a text-to-image AI tool, the portrait images visually communicate the dehumanizing impact of perceiving individuals as mere data points, susceptible to exploitation and behavior manipulation by tech corporations. These distorted faces, presented as bitmaps, were transformed into animated video clips for analog video feedback experiments \'97 a poignant metaphor for the closed-circuit systems inherent in generative AI technology. This video experiment led to a pivotal decision in the design process to embrace the unpredictability and uncertainty both as an attitude and an aesthetic. Furthermore, the intentional adaptation of analog equipment serves as a symbolic act of resistance amidst the rapid advancements of technology. Finally, the live VJ-ing performance is representative of the performative design principles. This dynamic approach allows for active engagement with visual materials, fostering spontaneity in the design process. Beyond its aesthetic value, live VJ-ing creates a visceral and immersive experience, inviting the audience to participate and connect through captivating visuals and music.</p>\
+       <p>Today, where novel technologies pose threats to fundamental human rights; individual and collective identity; and the essence of human authenticity; visual communication design emerges as a powerful intervention tool. To meaningfully contribute to the discourse on social change, <i>Project A0AI</i> serves to advocate for courageous exploration, radical experimentation, and a commitment to authenticity through the spirit of resistance.</p><br>\
+       <p>@stacydbkim<br>stacydbkim@gmail.com</p>\
+       <br><br>\
+    </div>\
+\
+\
+    <script>\
+        document.addEventListener('DOMContentLoaded', function () \{\
+            const body = document.body;\
+            const isMobile = window.innerWidth <= 600;\
+            let isTouching = false;\
+\
+            // Prevent default touch behavior\
+            body.addEventListener('touchmove', function (event) \{\
+                event.preventDefault();\
+            \});\
+\
+            // Create a grid of pixels\
+            for (let i = 0; i < window.innerWidth / 9; i++) \{\
+                for (let j = 0; j < window.innerHeight / 9; j++) \{\
+                    const pixel = document.createElement('div');\
+                    pixel.className = 'pixel';\
+                    pixel.style.left = `$\{i * 9\}px`;\
+                    pixel.style.top = `$\{j * 9\}px`;\
+                    body.appendChild(pixel);\
+                \}\
+            \}\
+\
+            // Add event listener to clear pixels on hover or touch\
+            body.addEventListener(isMobile ? 'touchstart' : 'mousemove', function (event) \{\
+                isTouching = true;\
+                clearPixels(event);\
+            \});\
+\
+            body.addEventListener(isMobile ? 'touchmove' : 'mousemove', function (event) \{\
+                if (isTouching) \{\
+                    clearPixels(event);\
+                \}\
+            \});\
+\
+            body.addEventListener(isMobile ? 'touchend' : 'mouseup', function () \{\
+                isTouching = false;\
+            \});\
+\
+            function clearPixels(event) \{\
+                const positionX = isMobile ? event.touches[0].clientX : event.clientX;\
+                const positionY = isMobile ? event.touches[0].clientY : event.clientY;\
+\
+                // Clear pixels in a 20px radius around the cursor\
+                const radius = isMobile ? 10 : 10;\
+                const pixels = document.querySelectorAll('.pixel');\
+\
+                pixels.forEach(pixel => \{\
+                    const pixelX = pixel.offsetLeft + 4.5;\
+                    const pixelY = pixel.offsetTop + 4.5;\
+\
+                    const distance = Math.sqrt((positionX - pixelX) ** 2 + (positionY - pixelY) ** 2);\
+\
+                    if (distance < radius) \{\
+                        pixel.style.backgroundColor = 'transparent';\
+                    \}\
+                \});\
+            \}\
+        \});\
+    </script>\
+</body>\
+\
+</html>}
