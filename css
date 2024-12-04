@@ -1,1 +1,4 @@
 
+body {
+  cursor: pointer; /* Sets the cursor to a hand icon over the entire page */
+}
