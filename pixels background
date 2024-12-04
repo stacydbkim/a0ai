@@ -26,12 +26,12 @@
 
 
         .pixel {
-            width: 10px;
-            height: 10px;
+            width: 9px;
+            height: 9px;
             position: absolute;
-            background-color: white;
+            background-color: black;
             pointer-events: none;
-            transition: background-color 0.1s ease-out;
+            transition: background-color 0.2s ease-out;
         }
 
         /* Add styles for mobile */
