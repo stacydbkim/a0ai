@@ -7,6 +7,7 @@
     <title>A0AI</title>
     <style>
         body {
+            cursor: pointer;
             margin: 0;
             overflow: hidden;
             background-color: black; /* Set background color to black */
@@ -20,12 +21,21 @@
         }
 
         .pixel {
+<<<<<<< Updated upstream
             width: 15px;
             height: 15px;
+=======
+            width: 8.7px;
+            height: 8.7px;
+>>>>>>> Stashed changes
             position: absolute;
             background-color: white;
             pointer-events: none;
+<<<<<<< Updated upstream
             transition: background-color 0s ease-out;
+=======
+            transition: background-color 0s;
+>>>>>>> Stashed changes
             z-index: 0;
         }
 
@@ -126,65 +136,67 @@
     </div>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const body = document.body;
-            const isMobile = window.innerWidth <= 600;
-            let isTouching = false;
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const body = document.body;
+        const isMobile = window.innerWidth <= 600;
+        let isTouching = false;
 
-            // Prevent default touch behavior
-            body.addEventListener('touchmove', function (event) {
-                event.preventDefault();
-            });
+        // Prevent default touch behavior
+        body.addEventListener('touchmove', function (event) {
+            event.preventDefault();
+        });
 
-            // Create a grid of pixels
-            for (let i = 0; i < window.innerWidth / 9; i++) {
-                for (let j = 0; j < window.innerHeight / 9; j++) {
-                    const pixel = document.createElement('div');
-                    pixel.className = 'pixel';
-                    pixel.style.left = `${i * 9}px`;
-                    pixel.style.top = `${j * 9}px`;
-                    body.appendChild(pixel);
-                }
+        // Create a grid of pixels
+        for (let i = 0; i < window.innerWidth / 9; i++) {
+            for (let j = 0; j < window.innerHeight / 9; j++) {
+                const pixel = document.createElement('div');
+                pixel.className = 'pixel';
+                pixel.style.left = `${i * 9}px`;
+                pixel.style.top = `${j * 9}px`;
+                body.appendChild(pixel);
             }
+        }
 
-            // Add event listener to clear pixels on hover or touch
-            body.addEventListener(isMobile ? 'touchstart' : 'mousemove', function (event) {
-                isTouching = true;
+        // Add event listener to clear pixels on hover or touch
+        body.addEventListener(isMobile ? 'touchstart' : 'mousemove', function (event) {
+            isTouching = true;
+            clearPixels(event);
+        });
+
+        body.addEventListener(isMobile ? 'touchmove' : 'mousemove', function (event) {
+            if (isTouching) {
                 clearPixels(event);
-            });
-
-            body.addEventListener(isMobile ? 'touchmove' : 'mousemove', function (event) {
-                if (isTouching) {
-                    clearPixels(event);
-                }
-            });
-
-            body.addEventListener(isMobile ? 'touchend' : 'mouseup', function () {
-                isTouching = false;
-            });
-
-            function clearPixels(event) {
-                const positionX = isMobile ? event.touches[0].clientX : event.clientX;
-                const positionY = isMobile ? event.touches[0].clientY : event.clientY;
-
-                // Clear pixels in a 20px radius around the cursor
-                const radius = isMobile ? 10 : 10;
-                const pixels = document.querySelectorAll('.pixel');
-
-                pixels.forEach(pixel => {
-                    const pixelX = pixel.offsetLeft + 4.5;
-                    const pixelY = pixel.offsetTop + 4.5;
-
-                    const distance = Math.sqrt((positionX - pixelX) ** 2 + (positionY - pixelY) ** 2);
-
-                    if (distance < radius) {
-                        pixel.style.backgroundColor = 'transparent';
-                    }
-                });
             }
         });
-    </script>
+
+        body.addEventListener(isMobile ? 'touchend' : 'mouseup', function () {
+            isTouching = false;
+        });
+
+        function clearPixels(event) {
+            const positionX = isMobile ? event.touches[0].clientX : event.clientX;
+            const positionY = isMobile ? event.touches[0].clientY : event.clientY;
+
+            // Generate a random radius between 10 and 20 for each interaction
+            const radius = Math.random() * (39 - 1); // Random radius between 10 and 20
+
+            const pixels = document.querySelectorAll('.pixel');
+
+            pixels.forEach(pixel => {
+                const pixelX = pixel.offsetLeft + 4.5; // Center of pixel
+                const pixelY = pixel.offsetTop + 4.5;  // Center of pixel
+
+                const distance = Math.sqrt((positionX - pixelX) ** 2 + (positionY - pixelY) ** 2);
+
+                if (distance < radius) {
+                    pixel.style.backgroundColor = 'transparent';
+                }
+            });
+        }
+    });
+</script>
+
 </body>
 
 </html>
